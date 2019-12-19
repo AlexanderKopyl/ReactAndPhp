@@ -6,10 +6,10 @@ if ($_SESSION["auth"] != true) {
 }
 
 $_POST = json_decode( file_get_contents("php://input"), true );
-$newFile = "../../" . $_POST["name"] . ".html";
+$newFile = "../../yfuy1g221ub_hhg44.html";
 
-if (file_exists($newFile)) {
-    header("HTTP/1.0 400 Bad Request");
+if ($_POST["html"]) {
+    file_put_contents($newFile, $_POST["html"]);
 } else {
-    fopen($newFile, "w");
+    header("HTTP/1.0 400 Bad Request");
 }
